@@ -1,0 +1,37 @@
+body {
+  width: 100%;
+  font-family: "Krona One", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background: url(/foto1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 100vh;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-type > .txt::after {
+  content: "";
+  border-right: 4px solid black;
+  animation: blink 0.5s infinite ease;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

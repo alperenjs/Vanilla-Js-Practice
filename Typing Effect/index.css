@@ -7,9 +7,6 @@ body {
 }
 
 .main {
-  background: url(/foto1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   height: 100vh;
   font-size: 15px;

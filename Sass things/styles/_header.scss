@@ -1,0 +1,27 @@
+@mixin flexCenter($direction, $background) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  background: $background;
+}
+
+header {
+  background: $primaryBtn;
+  @include flexCenter(column, gray);
+
+  button {
+    background: yellow;
+    &:hover {
+      //hover
+      background: red;
+    }
+    &::after {
+      //after
+      content: "hello";
+    }
+  }
+  h3 {
+    font-size: 13px;
+  }
+}

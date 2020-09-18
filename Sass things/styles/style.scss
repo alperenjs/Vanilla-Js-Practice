@@ -1,0 +1,8 @@
+$primaryBtn: red; //vars
+
+@import "./header"; //import from other scss file
+
+//
+.contact {
+  @extend header; // headerdaki tüm cssleri buraya da kullanıyor
+}

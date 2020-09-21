@@ -2,7 +2,7 @@ document.getElementById("getText").addEventListener("click", getText);
 document.getElementById("getUsers").addEventListener("click", getUsers);
 document.getElementById("getPOSTS").addEventListener("click", getPOSTS);
 document.getElementById("addPost").addEventListener("click", addPost);
-
+var global;
 var dataShow = document.getElementById("output");
 
 function getText() {
@@ -14,10 +14,33 @@ function getText() {
     .catch((err) => console.log(errorMonitor));
 }
 
+//Id'ye göre veri çekme 1111111111111111
+// function findId(data, idToLookFor) {
+//   for (var i = 0; i < data.length; i++) {
+//     if (data[i].id == idToLookFor) {
+//       return data[i];
+//     }
+//   }
+// }
+
 function getUsers() {
+  // console.log(this.id);
+  // global = this.id;
+  // console.log("globale taşınan değer" + global);
+  //değeri global değişkene taşıyıp sonra ordaki id ile veri çağırmak ?
   fetch("users.json")
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
+
+      //Id'ye göre veri çekme 1111111111111111
+      // var item = findId(data, 1);
+      // console.log(item);
+
+      //Id'ye göre veri çekme 222222222222222222222
+      // var item = data.find((item) => item.id === 3);
+      // console.log(item);
+      //
       let output = `<h2> Users </h2>`;
       data.forEach((user) => {
         output += `

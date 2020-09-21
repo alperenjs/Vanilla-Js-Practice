@@ -56,6 +56,7 @@ function displayEndTime(timeStamp) {
   }${minutes}`;
 }
 function startTimer() {
+  console.log(this.id);
   const seconds = parseInt(this.dataset.time);
   timer(seconds);
 }

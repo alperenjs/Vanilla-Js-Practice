@@ -6,31 +6,37 @@
 <head>
     <title>Hello</title>
     <script type="module">
-        function select_tab(id) {
-            // remove selected class from all buttons
-            document.querySelectorAll(".route").forEach(item => item.classList.remove('selected'));
-            // select clicked element (visually)
-            document.querySelectorAll("#" + id).forEach(item => item.classList.add('selected'));
-        }
         function load_content(id) {
 
-            console.log("Loading content for {" + id + "}");
-            // Update text "Content loading for {id}..."
-            // Of course, here you would do you content loading magic
-            // Perhaps run Fetch API to update resources
-            var output = `
-        <div class="alperen" > 
-            <p> sonunda çalıştı </p>
-            <h4> ID: ${id}    </h4>
-        </div>
-        `;
-            document.querySelector("#content").innerHTML = output;
+            // global = this.id;
+            // console.log("globale taşınan değer" + global);
+            //değeri global değişkene taşıyıp sonra ordaki id ile veri çağırmak ?
+            fetch("users.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    //Id'ye göre veri çekme 1111111111111111
+                    // var item = findId(data, 1);
+                    // console.log(item);
+                    //Id'ye göre veri çekme 222222222222222222222
+                    var item = data.find((item) => item.id === id);
+                    console.log(item);
+                    console.log("Loading content for {" + id + "}");
+
+                    var output = `
+                                        <div class="alperen" > 
+                                            <p> sonunda çalıştı </p>
+                                            <h4> ID: ${id} ${item.name}   </h4>
+                                        </div>
+                                        `;
+                    document.querySelector("#content").innerHTML = output;
+                });
+
         }
         function push(event) {
             // Get id attribute of the box or button or link clicked
             let id = event.target.id;
             // Visually select the clicked button/tab/box
-            select_tab(id);
             // Update Title in Window's Tab
             document.title = id;
             // Load content for this tab/page
@@ -42,7 +48,7 @@
             // Add history push() event when boxes are clicked
             window["home"].addEventListener("click", event => push(event))
             window["about"].addEventListener("click", event => push(event))
-            window["gallery"].addEventListener("click", event => push(event))
+            window["a1"].addEventListener("click", event => push(event))
             window["contact"].addEventListener("click", event => push(event))
             window["help"].addEventListener("click", event => push(event))
         }
@@ -113,12 +119,12 @@
     <section id="root">
         <section class="route" id="home">/home</section>
         <section class="route" id="about">/about</section>
-        <section class="route" id="gallery">/gallery</section>
+        <section class="route" id="a1">/3</section>
         <section class="route" id="contact">/contact</section>
         <section class="route" id="help">/help</section>
     </section>
 
-    <main id="content">Content loading...</main>
+    <main id="content">burada ürünmler vs</main>
 
 </body>
 

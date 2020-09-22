@@ -38,21 +38,24 @@ function getUsers() {
       // console.log(item);
 
       //Id'ye göre veri çekme 222222222222222222222
-      // var item = data.find((item) => item.id === 3);
-      // console.log(item);
-      //
-      let output = `<h2> Users </h2>`;
-      data.forEach((user) => {
-        output += `
-        <ul> 
-            <li> ID: ${user.id}    </li>
+      var item = data.find((item) => item.id === 3);
+      console.log(item);
 
-            <li>NAME:   ${user.name}  </li>
+      let output = `<h2> Users </h2>
+      <p> sonunda çalıştı </p>
+      <h4> ID: ${item.name} ${item.email}    </h4>
+`;
+      // data.forEach((user) => {
+      //   output +=
+      //   <ul>
+      //       <li> ID: ${user.id}    </li>
 
-            <li>MAIL:   ${user.email} </li>
-        </ul>
-        `;
-      });
+      //       <li>NAME:   ${user.name}  </li>
+
+      //       <li>MAIL:   ${user.email} </li>
+      //   </ul>
+      //   `;
+      // });
       dataShow.innerHTML = output;
     });
 }

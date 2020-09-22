@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <input id="kullaniciadi" type="text">
+    <!-- <span id="kullaniciadi">3124124</span> -->
+    <button id="mybuto3n"> transfer et</button>
+
+    <script type="text/javascript">
+
+        document.getElementById('mybuto3n').addEventListener('click', AdminButtonClick);
+        function AdminButtonClick() {
+
+            ad = event.target.id;
+            // ad = document.getElementById('kullaniciadi').value;
+            console.log(ad)
+            window.location.href = 'data2.html?ad=' + ad;
+        }
+    </script>
+</body>
+
+</html>
